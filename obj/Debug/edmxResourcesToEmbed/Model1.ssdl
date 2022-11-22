@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Shopping_appModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Shopping_app.dbo.CART' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CART">
+    <Key>
+      <PropertyRef Name="ID_CART" />
+    </Key>
+    <Property Name="ID_CART" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ID_USER" Type="varchar" MaxLength="20" />
+    <Property Name="ITEM_ID" Type="varchar" MaxLength="20" />
+    <Property Name="QUANTITY" Type="int" />
+    <Property Name="PAY_ADDRESS" Type="varchar" MaxLength="1000" />
+    <Property Name="PAY" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Shopping_app.dbo.COMMENT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="COMMENT">
+    <Key>
+      <PropertyRef Name="U_ID" />
+    </Key>
+    <Property Name="U_ID" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="I_ID" Type="varchar" MaxLength="20" />
+    <Property Name="CMT" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Shopping_app.dbo.HISTORY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="HISTORY">
+          <Property Name="IDU" Type="varchar" MaxLength="20" />
+          <Property Name="IDI" Type="varchar" MaxLength="20" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Shopping_app.dbo.Item' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CLASS" Type="varchar" MaxLength="10" />
+    <Property Name="TRADEMARK" Type="varchar" MaxLength="20" />
+    <Property Name="TEN" Type="varchar" MaxLength="60" />
+    <Property Name="DISCOUNT" Type="int" />
+    <Property Name="PICTURE" Type="varchar" MaxLength="100" />
+    <Property Name="GIA" Type="int" />
+    <Property Name="DANHGIA" Type="float" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Shopping_app.dbo.LOGIN_USER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="LOGIN_USER">
+    <Key>
+      <PropertyRef Name="ID_USER" />
+    </Key>
+    <Property Name="ID_USER" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="50" />
+    <Property Name="PASS" Type="varchar" MaxLength="20" />
+    <Property Name="NICKNAME" Type="varchar" MaxLength="20" />
+    <Property Name="ADMINISTRATOR" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Shopping_app.dbo.PHONE_INFO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PHONE_INFO">
+    <Key>
+      <PropertyRef Name="INFO_ID" />
+    </Key>
+    <Property Name="INFO_ID" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="INFO_CHIP" Type="varchar" MaxLength="100" />
+    <Property Name="INFO_RAM" Type="varchar" MaxLength="20" />
+    <Property Name="INFO_ROM" Type="varchar" MaxLength="20" />
+    <Property Name="INFO_SCREEN" Type="varchar" MaxLength="100" />
+    <Property Name="INFO_CAM" Type="varchar" MaxLength="500" />
+    <Property Name="INFO_BATTERY" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="Shopping_appModelStoreContainer">
+    <EntitySet Name="CART" EntityType="Self.CART" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [CART].[ID_CART] AS [ID_CART], 
+    [CART].[ID_USER] AS [ID_USER], 
+    [CART].[ITEM_ID] AS [ITEM_ID], 
+    [CART].[QUANTITY] AS [QUANTITY], 
+    [CART].[PAY_ADDRESS] AS [PAY_ADDRESS], 
+    [CART].[PAY] AS [PAY]
+    FROM [dbo].[CART] AS [CART]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="COMMENT" EntityType="Self.COMMENT" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [COMMENT].[U_ID] AS [U_ID], 
+    [COMMENT].[I_ID] AS [I_ID], 
+    [COMMENT].[CMT] AS [CMT]
+    FROM [dbo].[COMMENT] AS [COMMENT]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Item" EntityType="Self.Item" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Item].[ID] AS [ID], 
+    [Item].[CLASS] AS [CLASS], 
+    [Item].[TRADEMARK] AS [TRADEMARK], 
+    [Item].[TEN] AS [TEN], 
+    [Item].[DISCOUNT] AS [DISCOUNT], 
+    [Item].[PICTURE] AS [PICTURE], 
+    [Item].[GIA] AS [GIA], 
+    [Item].[DANHGIA] AS [DANHGIA]
+    FROM [dbo].[Item] AS [Item]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="LOGIN_USER" EntityType="Self.LOGIN_USER" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [LOGIN_USER].[ID_USER] AS [ID_USER], 
+    [LOGIN_USER].[USERNAME] AS [USERNAME], 
+    [LOGIN_USER].[PASS] AS [PASS], 
+    [LOGIN_USER].[NICKNAME] AS [NICKNAME], 
+    [LOGIN_USER].[ADMINISTRATOR] AS [ADMINISTRATOR]
+    FROM [dbo].[LOGIN_USER] AS [LOGIN_USER]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PHONE_INFO" EntityType="Self.PHONE_INFO" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PHONE_INFO].[INFO_ID] AS [INFO_ID], 
+    [PHONE_INFO].[INFO_CHIP] AS [INFO_CHIP], 
+    [PHONE_INFO].[INFO_RAM] AS [INFO_RAM], 
+    [PHONE_INFO].[INFO_ROM] AS [INFO_ROM], 
+    [PHONE_INFO].[INFO_SCREEN] AS [INFO_SCREEN], 
+    [PHONE_INFO].[INFO_CAM] AS [INFO_CAM], 
+    [PHONE_INFO].[INFO_BATTERY] AS [INFO_BATTERY]
+    FROM [dbo].[PHONE_INFO] AS [PHONE_INFO]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

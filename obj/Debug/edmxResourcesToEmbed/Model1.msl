@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Shopping_appModelStoreContainer" CdmEntityContainer="Shopping_appEntities">
+    <EntitySetMapping Name="CARTs">
+      <EntityTypeMapping TypeName="Shopping_appModel.CART">
+        <MappingFragment StoreEntitySet="CART">
+          <ScalarProperty Name="ID_CART" ColumnName="ID_CART" />
+          <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+          <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="PAY_ADDRESS" ColumnName="PAY_ADDRESS" />
+          <ScalarProperty Name="PAY" ColumnName="PAY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMMENTs">
+      <EntityTypeMapping TypeName="Shopping_appModel.COMMENT">
+        <MappingFragment StoreEntitySet="COMMENT">
+          <ScalarProperty Name="U_ID" ColumnName="U_ID" />
+          <ScalarProperty Name="I_ID" ColumnName="I_ID" />
+          <ScalarProperty Name="CMT" ColumnName="CMT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="Shopping_appModel.Item">
+        <MappingFragment StoreEntitySet="Item">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CLASS" ColumnName="CLASS" />
+          <ScalarProperty Name="TRADEMARK" ColumnName="TRADEMARK" />
+          <ScalarProperty Name="TEN" ColumnName="TEN" />
+          <ScalarProperty Name="DISCOUNT" ColumnName="DISCOUNT" />
+          <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+          <ScalarProperty Name="GIA" ColumnName="GIA" />
+          <ScalarProperty Name="DANHGIA" ColumnName="DANHGIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOGIN_USER">
+      <EntityTypeMapping TypeName="Shopping_appModel.LOGIN_USER">
+        <MappingFragment StoreEntitySet="LOGIN_USER">
+          <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASS" ColumnName="PASS" />
+          <ScalarProperty Name="NICKNAME" ColumnName="NICKNAME" />
+          <ScalarProperty Name="ADMINISTRATOR" ColumnName="ADMINISTRATOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PHONE_INFO">
+      <EntityTypeMapping TypeName="Shopping_appModel.PHONE_INFO">
+        <MappingFragment StoreEntitySet="PHONE_INFO">
+          <ScalarProperty Name="INFO_ID" ColumnName="INFO_ID" />
+          <ScalarProperty Name="INFO_CHIP" ColumnName="INFO_CHIP" />
+          <ScalarProperty Name="INFO_RAM" ColumnName="INFO_RAM" />
+          <ScalarProperty Name="INFO_ROM" ColumnName="INFO_ROM" />
+          <ScalarProperty Name="INFO_SCREEN" ColumnName="INFO_SCREEN" />
+          <ScalarProperty Name="INFO_CAM" ColumnName="INFO_CAM" />
+          <ScalarProperty Name="INFO_BATTERY" ColumnName="INFO_BATTERY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

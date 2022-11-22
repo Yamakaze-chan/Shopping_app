@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Shopping_appModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CART">
+    <Key>
+      <PropertyRef Name="ID_CART" />
+    </Key>
+    <Property Name="ID_CART" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_USER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="QUANTITY" Type="Int32" />
+    <Property Name="PAY_ADDRESS" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="PAY" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="COMMENT">
+    <Key>
+      <PropertyRef Name="U_ID" />
+    </Key>
+    <Property Name="U_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="I_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CMT" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CLASS" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TRADEMARK" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TEN" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="DISCOUNT" Type="Int32" />
+    <Property Name="PICTURE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GIA" Type="Int32" />
+    <Property Name="DANHGIA" Type="Double" />
+  </EntityType>
+  <EntityType Name="LOGIN_USER">
+    <Key>
+      <PropertyRef Name="ID_USER" />
+    </Key>
+    <Property Name="ID_USER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PASS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NICKNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ADMINISTRATOR" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PHONE_INFO">
+    <Key>
+      <PropertyRef Name="INFO_ID" />
+    </Key>
+    <Property Name="INFO_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="INFO_CHIP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="INFO_RAM" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="INFO_ROM" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="INFO_SCREEN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="INFO_CAM" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="INFO_BATTERY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="Shopping_appEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CARTs" EntityType="Self.CART" />
+    <EntitySet Name="COMMENTs" EntityType="Self.COMMENT" />
+    <EntitySet Name="Items" EntityType="Self.Item" />
+    <EntitySet Name="LOGIN_USER" EntityType="Self.LOGIN_USER" />
+    <EntitySet Name="PHONE_INFO" EntityType="Self.PHONE_INFO" />
+  </EntityContainer>
+</Schema>
